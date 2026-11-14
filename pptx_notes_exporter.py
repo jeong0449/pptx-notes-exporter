@@ -7,7 +7,7 @@ PowerPoint on Windows is used for thumbnails; --no-thumbnails skips it.
 """
 import argparse
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 import re
 import tempfile
 from zipfile import ZipFile, ZIP_DEFLATED
@@ -274,13 +274,13 @@ def draw_pdf(output, notes, imgs, orient, regular, bold, min_font=11.5, aspect="
         # Never wrap or truncate the title; shrink its font only if needed.
         c.setFillColor(colors.white)
         number_label = f'No.{number:02d}'
-        number_size = 18 if orient == 'landscape' else 17
+        number_size = 19 if orient == 'landscape' else 18
         baseline = H - bar_h / 2 - number_size * .34
         c.setFont(bold, number_size)
         c.drawString(margin, baseline, number_label)
         title_x = margin + pdfmetrics.stringWidth(number_label, bold, number_size) + 17
         title_available = W - margin - title_x
-        title_size = 18 if orient == 'landscape' else 17
+        title_size = 29 if orient == 'landscape' else 26
         while title_size > 7 and pdfmetrics.stringWidth(title, bold, title_size) > title_available:
             title_size -= .25
         if pdfmetrics.stringWidth(title, bold, title_size) > title_available:
@@ -385,6 +385,7 @@ Typography:
   Dense slides shrink only as needed to fit one slide per page.
   Line spacing scales with font size (1.43x); thumbnails stay small.
   Original notes bold runs are retained where PPTX formatting permits.
+  Titles start at 29 pt (landscape) or 26 pt (portrait), shrinking to one line.
 
 Output (both orientations, files in PPTX folder by default):
   <presentation>_notes_8inch_landscape.pdf
