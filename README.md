@@ -6,6 +6,10 @@ A small Python script that turns PowerPoint speaker notes into **iPad-friendly P
 
 I wanted to use an **old iPad as a dedicated presenter-notes reader** during a talk. The presentation runs on the venue's computer, while the iPad shows my speaking notes independently—no Presenter View, second monitor, or network connection required during the talk.
 
+<p align="center">
+  <img src="ipad.jpg" alt="Speaker notes displayed on an old iPad" width="420">
+</p>
+
 The PDFs are designed to be readable on a classic **4:3 iPad screen** (including older 9.7-inch models). Each slide's notes occupy one PDF page, with a small slide preview for orientation. The preview is only a visual cue; the notes are the main content. Both landscape and portrait PDFs are generated so I can choose whichever works better on the device.
 
 ## Features
